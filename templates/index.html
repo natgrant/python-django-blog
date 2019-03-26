@@ -7,9 +7,11 @@
     <title>Learn Django</title>
   </head>
   <body>
-    <h1>{{ title }} Hey the template works!</h1>
+    <h1>
+      {{ title }}
+    </h1>
     {% for obj in object_list %}
-    {{ obj.title }}<br />
+    <a href="/posts/{{ obj.id }}"> {{ obj.title }} </a><br />
     {{ obj.content }}<br />
     {{ obj.timestamp }}<br />
     {{ obj.updated }}<br />

@@ -9,8 +9,8 @@ def post_create(request):
     return HttpResponse("<h1>Hai</h1>")
 
 
-def post_detail(request):
-    instance = get_object_or_404(Post, id=3)
+def post_detail(request, id):
+    instance = get_object_or_404(Post, id=id)
     context = {
         "title": instance.title,
         "instance": instance
