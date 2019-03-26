@@ -3,10 +3,18 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from .models import Post
+from .posts import PostForm
 
 
 def post_create(request):
-    return HttpResponse("<h1>Hai</h1>")
+    form = PostForm(request.POST or None)
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+    context = {
+        "form": form,
+    }
+    return render(request, "post_form.html", context)
 
 
 def post_detail(request, id):
