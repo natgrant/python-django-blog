@@ -2,10 +2,11 @@
 {{ block.super }}
 {% endblock head_title %}{% block content %}
 
-<h1>{{ title }} Hey the template works!</h1>
-{{ instance.title }}<br />
-{{ instance.content }}<br />
-{{ instance.timestamp }}<br />
-{{ instance.updated }}<br />
-{{ instance.id }}<br />
-{% endblock content %}
+<div class="col-sm-6">
+  <h1>
+    {{ title }} <small>{{ instance.timestamp }}</small>
+  </h1>
+  {{ instance.content | linebreaks }}
+
+  {% endblock content %}
+</div>
