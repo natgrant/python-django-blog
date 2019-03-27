@@ -7,6 +7,9 @@
   <div class="col-sm-12">
     <!-- <img src="..." class="card-img-top" alt="..."> -->
     <div class="card" style="width: 18rem;">
+      {% if obj.image %}
+      <img src="{{ obj.image.url }}" class="card-img-top" />
+      {% endif %}
       <div class="card-body">
         <h5 class="card-title">
           <a href="{{ obj.get_absolute_url }}"> {{ obj.title }} </a><small>
