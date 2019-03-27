@@ -4,6 +4,6 @@
 <form method="POST" action="">
   {% csrf_token %}
   {{ form.as_p }}
-  <input type="submit" value="Create Post" />
+  <input class="btn btn-primary" type="submit" value="Create Post" />
 </form>
-{% endblock content}
+{% endblock content %}
